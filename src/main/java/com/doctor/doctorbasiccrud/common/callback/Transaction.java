@@ -47,7 +47,7 @@ public class Transaction {
         }
         String result = "DIGEST_LOG(" + serviceName.getName() + ",";
         result += response.getErrorContext().getErrorCode().getName() + ",";
-        if (response instanceof TaskResponse res) {
+        if (response instanceof TaskResponse res && res.getTask() != null) {
             result += res.getTask().getId() + ",";
             result += res.getTask().getName() + ",";
             result += res.getTask().isCompleted();

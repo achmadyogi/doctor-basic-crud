@@ -58,8 +58,8 @@ public class SecurityConfig {
     UserDetailsService users() {
         // @formatter:off
         return new InMemoryUserDetailsManager(
-                User.withUsername("user")
-                        .password("{noop}password")
+                User.withUsername("doctor")
+                        .password("{noop}D0ct0r123")
                         .authorities("app")
                         .build()
         );

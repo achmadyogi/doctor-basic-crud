@@ -174,7 +174,9 @@ public class TaskFacadeImpl implements TaskFacade {
             public BaseResponse doTransaction() {
                 taskRepository.deleteById(id);
                 database.remove(id);
-                return new TaskResponse(new ErrorContext(ErrorCodeEnum.SUCCESS, null));
+                Task task = new Task();
+                task.setId(id);
+                return new TaskResponse(task, new ErrorContext(ErrorCodeEnum.SUCCESS, null));
             }
         });
     }
